@@ -21,6 +21,13 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
+        for (Cell s : steps) {
+            for (Figure f : figures) {
+                if (f != null && s != null && f.position().equals(s)) {
+                    throw new OccupiedCellException();
+                }
+            }
+        }
         return true;
     }
 
