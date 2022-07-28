@@ -18,6 +18,12 @@ public class BishopBlackTest {
 
     @Test
     public void testWay() {
-        new BishopBlack(Cell.C1).way(Cell.G5);
+        Cell[] expected = new Cell[]{
+                new BishopBlack(Cell.D2).position(),
+                new BishopBlack(Cell.E3).position(),
+                new BishopBlack(Cell.F4).position(),
+                new BishopBlack(Cell.G5).position(),
+        };
+        Assert.assertEquals(new BishopBlack(Cell.C1).way(Cell.G5), expected);
     }
 }
